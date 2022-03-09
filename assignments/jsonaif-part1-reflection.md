@@ -13,7 +13,7 @@ compatível (e.g. `Student`) conforme ilustrado no exemplo seguinte:
 
 ```kotlin
 val json = "{ name: \"Ze Manel\", nr: 7353}"
-val student = JsonParserReflect.parse(json, Student::class) as StudentWithFields
+val student = JsonParserReflect.parse(json, Student::class) as Student
 assertEquals("Ze Manel", student.name)
 assertEquals(7353, student.nr)
 ```
