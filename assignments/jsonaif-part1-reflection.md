@@ -26,23 +26,34 @@ primitivos ou instâncias de outras classes de domínio, ou listas, e assim
 sucessivamente.
 Ambas as classes são fornecidas no projecto `jsonaif`.
 
+**Este enunciado tem 5 partes, sendo que as partes 1 ou 2, têm um grau de
+dificuldade menor e uma dimensão mais reduzida do que cada uma das partes 3, 4,
+ou 5.**
+
 ## Parte 1
 
 Implemente os métodos `parsePrimitive` e `parseObject` de `JsonParserReflect` de
-modo a ter o comportamento desejado e satisfazer os testes unitários
-disponibilizados no projecto `jsonaif`.
-Pode adicionar novos métodos auxiliares.
+modo a ter o comportamento desejado e satisfazer o testes unitário
+`parseSimpleObjectViaProperties()` disponibilizado no projecto `jsonaif`.
+Pode adicionar outros testes unitários além dos existentes.
 
-A classe `JsonTokens` não deve ser modificada.
+Pode adicionar novos métodos auxiliares a `JsonParseReflect`. **A classe
+`JsonTokens` não deve ser modificada.**
 
-**Nota**: o nome das propriedades JSON pode ser definido indiferentemente em
-maiúsculas ou minúsculas.
-A classe de domínio correspondente não pode ter propriedades com nomes que se
-distingam entre si apenas por terem letras maiúsculas ou minúsculas.
+Implemente `parseObject` de `JsonParserReflect` instanciando a classe de domínio
+através da chamada ao construtor sem parâmetros, ou que tem todos os
+parâmetros opcionais (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect.full/create-instance.html).
+Posteriormente afecta cada um das propriedades vindas da string JSON. 
 
-Mantenha uma estrutura de dados com instâncias de `Setter` para cada classe de
-domínio de modo a que não seja repetido o trabalho de leitura de metadata via
-Reflexão.
+Note que nas classes de domínio dos testes do projecto `jsonaif` apenas a
+classes `Student` pode ser instanciada nestas condições porque é a única que tem
+um construtor com todos os parâmetros opcionais.
+
+## Parte 2
+
+Refaça a implementação de `JsonParserReflect` que mantenha uma estrutura de
+dados com instâncias de `Setter` para cada classe de domínio, de modo a que não
+seja repetido o trabalho de leitura de metadata via Reflexão.
 Por exemplo, no parsing de um array de `Student` as propriedades a serem
 afectadas só devem ser procuradas 1 vez.
 
@@ -62,16 +73,16 @@ conjunto de pares: nome da propriedade - `Setter`
 val setters = mutableMapOf<KClass<*>, Map<String, Setter>>()
 ```
 
-`JsonParserReflect` deve suportar duas formas de instanciar a classe de domínio:
+## Parte 3
+
+Altere a classe`JsonParserReflect` para suportar duas formas de instanciar a classe de domínio:
 
 1. Através da chamada ao construtor sem parâmetros, ou que tem todos os
    parâmetros opcionais
    (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect.full/create-instance.html).
-   Posteriormente afecta cada um das propriedades vindas da string JSON. E.g. de
-   data class
+   E.g. `Student`
 
-2. Chamando um construtor com parâmetros.. E.g. de `data class...` com
-   propriedades `var`.
+2. Chamando um construtor com parâmetros. E.g. `Person`
 
 A implementação de `parseObject`deve dar prioridade à opção 1, sempre que possível.
 
@@ -82,7 +93,7 @@ Implemente mais testes unitários incluindo por exemplo entidades de domínio co
   (_transactions_)
 * Um outro exemplo ao seu critério.
 
-## Parte 2
+## Parte 4
 
 Pretende-se que as propriedades da classe de domínio possam ter nomes distintos
 dos nomes usados na representação em JSON.
@@ -94,7 +105,7 @@ uma classe de domínio indicando o nome correspondente em JSON (e.g.
 Altere `JsonParserReflect` para implementar o comportamento especificado e
 valide com testes unitários.
 
-## Parte 3
+## Parte 5
 
 Pretende-se ter uma forma alternativa de definir o valor de objectos sem ter que
 seguir a sintaxe JSON.
