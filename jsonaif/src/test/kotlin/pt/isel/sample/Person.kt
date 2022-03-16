@@ -1,3 +1,3 @@
 package pt.isel.sample
 
-data class Person (var birth: Date?  =null, var name: String? = null, var sibling: Person? = null)
+data class Person (val id: Int, val name: String, val birth: Date? = null, var sibling: Person? = null)

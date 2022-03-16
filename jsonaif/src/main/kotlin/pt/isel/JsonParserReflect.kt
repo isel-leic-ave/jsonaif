@@ -6,6 +6,7 @@ object JsonParserReflect  : AbstractJsonParser() {
 
     /**
      * For each domain class we keep a Map<String, Setter> relating properties names with their setters.
+     * This is for Part 2 of Jsonaif workout.
      */
     private val setters = mutableMapOf<KClass<*>, Map<String, Setter>>()
     
