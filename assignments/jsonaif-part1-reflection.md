@@ -30,6 +30,9 @@ Ambas as classes são fornecidas no projecto `jsonaif`.
 dificuldade menor e uma dimensão mais reduzida do que cada uma das partes 3, 4,
 ou 5.**
 
+**A avaliação terá em conta não só a concretização com sucesso das 5 partes,
+mas também o progresso dos alunos ao longo da realização do trabalho**
+
 ## Parte 1
 
 Implemente os métodos `parsePrimitive` e `parseObject` de `JsonParserReflect` de
@@ -129,6 +132,6 @@ conversor para qualquer classe de domínio.
 `JsonParserReflect` deve passar a ter em consideração esta anotação na
 inicialização das instâncias de `Setter`.
 
-Além do exemplo dado, valide a sua implementação com outro exemplo de conversor
+**Além do exemplo dado, valide a sua implementação com outro exemplo de conversor
 para outro tipo de propriedade que deverá acrescentar a uma das classes de
-domínio.
+domínio.**
