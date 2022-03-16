@@ -26,12 +26,14 @@ primitivos ou instâncias de outras classes de domínio, ou listas, e assim
 sucessivamente.
 Ambas as classes são fornecidas no projecto `jsonaif`.
 
-**Este enunciado tem 5 partes, sendo que as partes 1 ou 2, têm um grau de
-dificuldade menor e uma dimensão mais reduzida do que cada uma das partes 3, 4,
-ou 5.**
+**Este enunciado tem 5 partes, sendo que as partes 1 e 2 têm um grau de
+dificuldade menor e uma dimensão mais reduzida do que cada uma das partes 3, 4
+e 5.**
 
-**A avaliação terá em conta não só a concretização com sucesso das 5 partes,
-mas também o progresso dos alunos ao longo da realização do trabalho**
+**A avaliação terá em conta não só a concretização com sucesso das 5 partes, mas
+também o progresso dos alunos ao longo da realização do trabalho, incluindo o
+que pode ser observado pelos commits no repositório git de suporte ao trabalho
+do grupo**
 
 ## Parte 1
 
