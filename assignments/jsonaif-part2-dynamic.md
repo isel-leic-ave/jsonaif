@@ -24,7 +24,7 @@ Trabalho 2.
 
 ##### **Figura 1 - Diagrama de `JsonParserReflect`**
 ***
-<a href="trab2-figure1-reflect.png"><img src="trab2-figure1-reflect.png" width="700"></a>
+<a href="https://github.com/isel-leic-ave/jsonaif/raw/assignment2/assignments/trab2-figure1-reflect.png" target="_blank"><img src="trab2-figure1-reflect.png"></a>
 
 O diagrama da [figura 2](#figura-2---diagrama-de-jsonparserdynamic) apresenta um
 exemplo do objecto `JsonParserDynamic` onde cada propriedade tem uma
@@ -37,7 +37,7 @@ operações de _boxing_ e _unboxing_.
 
 ##### **Figura 2 - Diagrama de `JsonParserDynamic`**
 ***
-<a href="trab2-figure2-dynamic.png"><img src="trab2-figure2-dynamic.png" width="700"></a>
+<a href="https://github.com/isel-leic-ave/jsonaif/raw/assignment2/assignments/trab2-figure2-dynamic.png" target="_blank"><img src="trab2-figure2-dynamic.png"></a>
 
 
 `JsonParserDynamic` deve gerar em tempo de execução implementações das classes
