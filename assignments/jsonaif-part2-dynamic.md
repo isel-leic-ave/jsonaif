@@ -11,7 +11,7 @@ _metadata_, deixando apenas de ser usada reflexão em operações como
 realizada directamente com base em código gerado em tempo de execução
 através da API de ..... 
 
-**NOTA** Igonore o caso de propriedades imutáveis iniciadas pelo construtor.
+**NOTA** Ignore o caso de propriedades imutáveis iniciadas pelo construtor.
 
 O diagrama da [figura 1](#figura-1---diagrama-de-jsonparserdynamic) apresenta um
 exemplo do objecto `JsonParserReflect` do Trabalho 1, onde cada instância de
@@ -32,7 +32,7 @@ implementação de `Setter` específica (e.g. `SetterStudent_name`,
 `SetterAddress_postcode`), evitando o uso de reflexão na afectação de uma
 propriedade.
 Note ainda que para propriedades de tipo primitivo (e.g. `postcode`) a implementação
-de `Setter` evita a chamada ao `parse()` da base para que incorrer nos custos das
+de `Setter` evita a chamada ao `parse()` da base para não incorrer nos custos das
 operações de _boxing_ e _unboxing_.
 
 ##### **Figura 2 - Diagrama de `JsonParserDynamic`**
