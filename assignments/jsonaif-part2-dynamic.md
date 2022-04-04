@@ -9,7 +9,7 @@ propriedades**. Note, que **continuará a ser usada reflexão na leitura** da
 _metadata_, deixando apenas de ser usada reflexão em operações como
 `<property>.setter.call(…)`.  A atribuição de valores a propriedades passa a ser
 realizada directamente com base em código gerado em tempo de execução
-através da API de ..... 
+através da API de [JavaPoet](https://github.com/square/javapoet).
 
 **NOTA** Ignore o caso de propriedades imutáveis iniciadas pelo construtor.
 
