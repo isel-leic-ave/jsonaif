@@ -51,7 +51,30 @@ A função `loadAndCreateInstance(source: JavaFile)` usa um `ClassLoader` para
 carregar a classe definida em `source` e criar uma instância dessa classe
 (considerando que tem um contrutor sem parâmetros).
 
+```kotlin
+import com.squareup.javapoet.JavaFile
+import java.io.File
+import java.net.URLClassLoader
+import javax.tools.ToolProvider
 
+private val root = File("./build")
+private val classLoader = URLClassLoader.newInstance(arrayOf(root.toURI().toURL()))
+private val compiler = ToolProvider.getSystemJavaCompiler()
+
+fun loadAndCreateInstance(source: JavaFile): Any {
+    // Save source in .java file.
+    source.writeToFile(root)
+
+    // Compile source file.
+    compiler.run(null, null, null, "${root.path}/${source.typeSpec.name}.java")
+
+    // Load and instantiate compiled class.
+    return classLoader
+        .loadClass(source.typeSpec.name)
+        .getDeclaredConstructor()
+        .newInstance()
+}
+```
 
 ## 2. Benchmark
 
