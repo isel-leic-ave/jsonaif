@@ -2,6 +2,8 @@
 
 **Data limite de entrega: 16 de Maio**
 
+## 1. `JsonParserDynamic`
+
 No seguimento do Trabalho 1 desenvolvido na biblioteca `jsonaif` pretende-se
 desenvolver uma nova classe `JsonParserDynamic` com o mesmo comportamento de
 `JsonParserReflect`, mas que **NÃO usa reflexão na atribuição de valores às
@@ -42,6 +44,16 @@ operações de _boxing_ e _unboxing_.
 
 `JsonParserDynamic` deve gerar em tempo de execução implementações em Java das
 classes que implementam a interface `Setter` para cada propriedade.
+
+O código das classes gerado dinamicamente através do JavaPoet é construído sobre
+uma instância de `com.squareup.javapoet.JavaFile`.
+A função `loadAndCreateInstance(source: JavaFile)` usa um `ClassLoader` para
+carregar a classe definida em `source` e criar uma instância dessa classe
+(considerando que tem um contrutor sem parâmetros).
+
+
+
+## 2. Benchmark
 
 Além de testes unitários que validem o correcto funcionamento de
 `JsonParserDynamic` complete a aplicação consola do projecto **jsonaif-bench**,
