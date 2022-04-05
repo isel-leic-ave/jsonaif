@@ -28,7 +28,7 @@ Trabalho 2.
 
 O diagrama da [figura 2](#figura-2---diagrama-de-jsonparserdynamic) apresenta um
 exemplo do objecto `JsonParserDynamic` onde cada propriedade tem uma
-implementação de `Setter` específica (e.g. `SetterStudent_name`,
+implementação de `Setter` específica **em Java** (e.g. `SetterStudent_name`,
 `SetterAddress_postcode`), evitando o uso de reflexão na afectação de uma
 propriedade.
 Note ainda que para propriedades de tipo primitivo (e.g. `postcode`) a implementação
@@ -40,8 +40,8 @@ operações de _boxing_ e _unboxing_.
 <a href="https://github.com/isel-leic-ave/jsonaif/raw/assignment2/assignments/trab2-figure2-dynamic.png" target="_blank"><img src="trab2-figure2-dynamic.png"></a>
 
 
-`JsonParserDynamic` deve gerar em tempo de execução implementações das classes
-que implementam a interface `Setter` para cada propriedade.
+`JsonParserDynamic` deve gerar em tempo de execução implementações em Java das
+classes que implementam a interface `Setter` para cada propriedade.
 
 Além de testes unitários que validem o correcto funcionamento de
 `JsonParserDynamic` complete a aplicação consola do projecto **jsonaif-bench**,
@@ -49,5 +49,11 @@ para comparar o desempenho do método `parse()` entre as classes `JsonParserRefl
 `JsonParserDynamic`.
 
 Para as medições de desempenho **use a abordagem apresentada nas aulas**
-(**atenção que testes de desempenho não são testes unitários**). Registe e
-comente os desempenhos obtidos entre as duas abordagens. 
+(**atenção que testes de desempenho não são testes unitários**).
+Registe e comente os desempenhos obtidos entre as duas abordagens. 
+
+Analise e tire conclusões sobre as diferenças de desempenho observadas para
+diferentes tipos de objectos de domínio, tais como: 
+1) objectos só com propriedades de tipo primitivo (e.g. `Date`)
+2) objectos só com propriedades de tipo referência.
+3) objectos com propriedades de tipo primitivo e tipo referência.
