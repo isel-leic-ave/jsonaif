@@ -118,7 +118,7 @@ Por exemplo, em vez de a propriedade `birth` de `Person`, do tipo
 `pt.isel.sample.Date`, ser definida em JSON, como no exemplo seguinte, poderá
 ter uma forma alternativa como  a que se apresenta para `Student`:
 * JSON for a Person: `"{ name: "Ze Manel", birth: { year: 1999, month: 9, day: 19}, sibling: { name: "Kata Badala"}}"`
-* JSON for a Student: `"{ name: "Maria Papoila", nr: 73753}, birth: "1998-11-17" }"`
+* JSON for a Student: `"{ name: "Maria Papoila", nr: 73753, birth: "1998-11-17" }"`
 
 Neste caso a propriedade `birth` em `Student` tem que ter uma anotação que
 identifique a classe responsável por fazer a conversão de `String` numa
