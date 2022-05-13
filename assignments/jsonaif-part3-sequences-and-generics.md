@@ -5,7 +5,7 @@
 ## 1. Genéricos
 
 Altere a API de `JsonParser` de modo a que a classe de domínio seja passada num
-argumento de tipo (i.e. _genérico_) e evite a utilização de casting (e.g.
+argumento de tipo (i.e. _genérico_) e evite a utilização explícita de casting (e.g.
 operador `as`).
 
 As utilizações apresentadas na primeira coluna do exemplo seguinte devem poder
@@ -28,7 +28,7 @@ val ps = parser.parse(json, Person::class) as List<Person>
 ```kotlin
 JsonParser parser = ...
 val student = parser.parse<Student>(json)
-val p = parser.parse<Person>(json)
+val p : Person? = parser.parse(json)
 val ps = parser.parseArray<Person>(json)
 ```
 
@@ -57,8 +57,8 @@ implementações `JsonParserReflect` e `JsonParserDynamic`.
 
 1. Implemente dois novos método `parseFolderEager(path: String): List<T?>` e
 `parseFolderLazy(path: String): Sequence<T?>` que retornam uma lista ou uma
-sequência _lazy_, onde cada elemento é o resultado do `parseObject` de cada
-ficheiro da pasta `path`.
+sequência _lazy_, onde cada elemento é o resultado de aplicar `parseObject`
+sobre o conteúdo de cada ficheiro presente na pasta `path`.
 
 2. Implemente testes unitários que demonstrem que uma alteração de um ficheiro
 no decorrer de uma iteração sobre o resultado do `parseFolder...` é visível, ou
