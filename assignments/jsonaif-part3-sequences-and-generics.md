@@ -28,7 +28,7 @@ val ps = parser.parse(json, Person::class) as List<Person>
 ```kotlin
 JsonParser parser = ...
 val student = parser.parse<Student>(json)
-val p : Person = parser.parse(json)
+val p : Person? = parser.parse(json)
 val ps = parser.parseArray<Person>(json)
 ```
 
